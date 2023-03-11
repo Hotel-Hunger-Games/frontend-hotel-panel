@@ -1,1 +1,7 @@
-<p>pending-auction-item works!</p>
+<div class="auction-container">
+    <p>pending-auction-item works!</p>
+    <app-pending-auction-item-details *ngIf="showAuctionDetailsComponent"></app-pending-auction-item-details>
+    <button *ngIf="!showAuctionDetailsComponent" (click)="showAuctionDetailsComponent = !showAuctionDetailsComponent" >Show details</button>
+    <button *ngIf="showAuctionDetailsComponent" (click)="showAuctionDetailsComponent = !showAuctionDetailsComponent" >Hide details</button>
+</div>
+

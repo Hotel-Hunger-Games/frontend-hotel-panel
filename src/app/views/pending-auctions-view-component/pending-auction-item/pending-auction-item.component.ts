@@ -8,11 +8,11 @@ import { Auction } from 'src/app/models/auction-item-model';
 })
 export class PendingAuctionItemComponent implements OnInit {
   @Input() auctionItem!: Auction;
+  showAuctionDetailsComponent: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.auctionItem);
   }
-
 }

@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PendingAuctionsViewComponentComponent } from './views/pending-auctions-view-component/pending-auctions-view-component.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { PendingAuctionItemComponent } from './views/pending-auctions-view-component/pending-auction-item/pending-auction-item.component';
+import { PendingAuctionItemDetailsComponent } from './views/pending-auctions-view-component/pending-auction-item-details/pending-auction-item-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PendingAuctionItemComponent } from './views/pending-auctions-view-compo
     FooterComponent,
     PendingAuctionsViewComponentComponent,
     DashboardComponent,
-    PendingAuctionItemComponent
+    PendingAuctionItemComponent,
+    PendingAuctionItemDetailsComponent
   ],
   imports: [
     BrowserModule,
