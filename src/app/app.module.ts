@@ -9,6 +9,9 @@ import { PendingAuctionsViewComponentComponent } from './views/pending-auctions-
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { PendingAuctionItemComponent } from './views/pending-auctions-view-component/pending-auction-item/pending-auction-item.component';
 import { PendingAuctionItemDetailsComponent } from './views/pending-auctions-view-component/pending-auction-item-details/pending-auction-item-details.component';
+import { AuctionCreatorComponent } from './views/auction-creator/auction-creator.component';
+import { PendingAuctionsEndingSoonComponent } from './views/pending-auctions-view-component/pending-auctions-ending-soon/pending-auctions-ending-soon.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { PendingAuctionItemDetailsComponent } from './views/pending-auctions-vie
     PendingAuctionsViewComponentComponent,
     DashboardComponent,
     PendingAuctionItemComponent,
-    PendingAuctionItemDetailsComponent
+    PendingAuctionItemDetailsComponent,
+    AuctionCreatorComponent,
+    PendingAuctionsEndingSoonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

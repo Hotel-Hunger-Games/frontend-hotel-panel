@@ -1,2 +1,6 @@
 <!-- ALL pending auctions -->
 <app-pending-auctions-view-component></app-pending-auctions-view-component>
+<hr>
+<button *ngIf="!auctionCreator" (click)="auctionCreator = !auctionCreator">Create new auction</button>
+<app-auction-creator *ngIf="auctionCreator"></app-auction-creator>
+<button *ngIf="auctionCreator" (click)="auctionCreator = !auctionCreator">Cancel</button>
