@@ -1,7 +1,16 @@
 <div class="auction-container">
-    <p>pending-auction-item works!</p>
+    <div class="auction-informations">
+        <p>Room 389</p>
+        <p>Accomodation range</p>
+        <p>From date:</p>
+        <p>15.06.2023</p>
+        <p>-</p>
+        <p>To date:</p>
+        <p>22.06.2023</p>
+    </div>
     <app-pending-auction-item-details *ngIf="showAuctionDetailsComponent"></app-pending-auction-item-details>
-    <button *ngIf="!showAuctionDetailsComponent" (click)="showAuctionDetailsComponent = !showAuctionDetailsComponent" >Show details</button>
+    <button *ngIf="!showAuctionDetailsComponent" (click)="showAuctionDetailsComponent = !showAuctionDetailsComponent" >Show auction details</button>
     <button *ngIf="showAuctionDetailsComponent" (click)="showAuctionDetailsComponent = !showAuctionDetailsComponent" >Hide details</button>
+    <button>Show all bids</button>
 </div>
 
