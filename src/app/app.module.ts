@@ -13,6 +13,7 @@ import { PendingAuctionsEndingSoonComponent } from './views/pending-auctions-vie
 import { ReactiveFormsModule } from '@angular/forms';
 import { BidsViewComponent } from './views/bids-view/bids-view.component';
 import { BidItemComponent } from './views/bids-view/bid-item/bid-item.component';
+import { AngularMaterialModule } from 'src/angular-material.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BidItemComponent } from './views/bids-view/bid-item/bid-item.component'
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

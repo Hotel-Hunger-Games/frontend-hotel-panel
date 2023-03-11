@@ -11,7 +11,7 @@ export class PendingAuctionsViewComponentComponent implements OnInit {
 
   constructor() { 
     let auction: Auction = {
-      id: 0,
+      id: 32,
       stayEntity: '',
       startPrice: 200,
       actualPrice: 400,
@@ -20,7 +20,7 @@ export class PendingAuctionsViewComponentComponent implements OnInit {
     }
 
     let auction2: Auction = {
-      id: 0,
+      id: 64,
       stayEntity: '',
       startPrice: 300,
       actualPrice: 500,

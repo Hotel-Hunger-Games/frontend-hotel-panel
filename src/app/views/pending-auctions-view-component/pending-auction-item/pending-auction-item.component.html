@@ -11,6 +11,6 @@
     <app-pending-auction-item-details *ngIf="showAuctionDetailsComponent"></app-pending-auction-item-details>
     <button *ngIf="!showAuctionDetailsComponent" (click)="showAuctionDetailsComponent = !showAuctionDetailsComponent" >Show auction details</button>
     <button *ngIf="showAuctionDetailsComponent" (click)="showAuctionDetailsComponent = !showAuctionDetailsComponent" >Hide details</button>
-    <button>Show all bids</button>
+    <button (click)="openDialog()">Show all bids</button>
 </div>
 

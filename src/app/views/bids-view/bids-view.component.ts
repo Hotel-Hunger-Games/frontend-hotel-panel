@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Bid } from 'src/app/models/bid-item-model';
+import { DialogData } from '../pending-auctions-view-component/pending-auction-item/pending-auction-item.service';
 
 @Component({
   selector: 'app-bids-view',
@@ -7,9 +9,11 @@ import { Bid } from 'src/app/models/bid-item-model';
   styleUrls: ['./bids-view.component.scss']
 })
 export class BidsViewComponent implements OnInit {
-  @Input() bidsList!: Bid[];
+  private bidsList: Bid[] = [];
 
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    ) { }
 
   ngOnInit(): void {
   }
