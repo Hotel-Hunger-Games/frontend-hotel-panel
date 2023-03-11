@@ -1,5 +1,46 @@
 <app-navbar></app-navbar>
 <div>
-    <h1>Create new room</h1>
+    <!-- hoomePage/landingPage ???? -->
+
+    <!-- containing all of the available options -->
+    <div #dashboard>
+        <button>Create new auction</button>
+    </div>
+    <div #auctionCreatorComponent>
+        <!-- fetch rooms from api -->
+        <p>Set room number</p>
+        <!-- fetch calendar from api -->
+        <p>Set auction week</p>
+        <p>Set when auction starts</p>
+        <p>Set when auction ends</p>
+        <p>Set starting price</p>
+        <p>Add add-ons</p>
+    </div>
+    <!-- we get there from all the auctions view component, we get certain auction -->
+    <div #pendingAuctionManagerComponent>
+        
+    </div>
+    <!-- ALL pending auctions -->
+    <div #pendingAuctionsViewComponent>
+        
+    </div>
+    <!-- show data about pending auction -->
+    <div #pendingAuctionDetailsViewComponent>
+        
+    </div>
+    <div #closedAuctionsViewComponent>
+
+    </div>
+
+    <!-- like charge the winner, send him notification about winning price, confirm closing auction and set room as occupied on set term -->
+    <div #closedAuctionFinalizerComponent>
+
+    </div>
+    <!-- after auction has been finalized it is going to be archived -->
+    <div #archivedAuctionDetailsComponent>
+
+    </div>
+
+    <!-- stats -->
 </div>
 <app-footer></app-footer>
