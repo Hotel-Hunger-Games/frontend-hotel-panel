@@ -12,6 +12,8 @@ import { PendingAuctionItemDetailsComponent } from './views/pending-auctions-vie
 import { AuctionCreatorComponent } from './views/auction-creator/auction-creator.component';
 import { PendingAuctionsEndingSoonComponent } from './views/pending-auctions-view-component/pending-auctions-ending-soon/pending-auctions-ending-soon.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BidsViewComponent } from './views/bids-view/bids-view.component';
+import { BidItemComponent } from './views/bids-view/bid-item/bid-item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PendingAuctionItemComponent,
     PendingAuctionItemDetailsComponent,
     AuctionCreatorComponent,
-    PendingAuctionsEndingSoonComponent
+    PendingAuctionsEndingSoonComponent,
+    BidsViewComponent,
+    BidItemComponent
   ],
   imports: [
     BrowserModule,
