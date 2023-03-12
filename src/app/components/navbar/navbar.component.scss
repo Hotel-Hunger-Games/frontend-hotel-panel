@@ -1,0 +1,20 @@
+.navbar {   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #9c27b0;
+    height: 40px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-element {
+    align-self: center;
+    padding: 0px 25px 0px 25px;
+    display: flex;
+}

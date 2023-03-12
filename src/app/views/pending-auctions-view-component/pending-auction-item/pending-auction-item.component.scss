@@ -1,0 +1,10 @@
+.auction-container {
+    border: solid 0.5px;
+}
+
+.auction-informations {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-evenly;
+}
