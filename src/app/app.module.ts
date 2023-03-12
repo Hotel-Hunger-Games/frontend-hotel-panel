@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BidsViewComponent } from './views/bids-view/bids-view.component';
 import { BidItemComponent } from './views/bids-view/bid-item/bid-item.component';
 import { AngularMaterialModule } from 'src/angular-material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AngularMaterialModule } from 'src/angular-material.module';
     AppRoutingModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

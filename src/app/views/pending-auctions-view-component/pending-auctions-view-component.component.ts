@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auction } from 'src/app/models/auction-item-model';
+import { PendingAuctionsService } from './pending-auctions.service';
 
 @Component({
   selector: 'app-pending-auctions-view-component',
@@ -9,7 +10,7 @@ import { Auction } from 'src/app/models/auction-item-model';
 export class PendingAuctionsViewComponentComponent implements OnInit {
   public pendingAuctions: Auction[] = [];
 
-  constructor() { 
+  constructor(private readonly pendingAuctionsService: PendingAuctionsService) { 
     let auction: Auction = {
       id: 32,
       stayEntity: '',
@@ -33,7 +34,7 @@ export class PendingAuctionsViewComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    // this.pendingAuctionsService.getAuctions();
   }
 
 }
