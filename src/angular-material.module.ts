@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [],
@@ -9,6 +10,7 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
     CommonModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatRippleModule,
   ]
 })
 export class AngularMaterialModule { 

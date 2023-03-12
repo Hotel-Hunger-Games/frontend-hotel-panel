@@ -15,6 +15,7 @@ import { BidsViewComponent } from './views/bids-view/bids-view.component';
 import { BidItemComponent } from './views/bids-view/bid-item/bid-item.component';
 import { AngularMaterialModule } from 'src/angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     AngularMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
