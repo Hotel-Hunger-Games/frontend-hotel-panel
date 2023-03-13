@@ -1,3 +1,5 @@
-<p>All pending auctions:</p>
-<!-- show name of the month, split auctions by it -->
-<app-pending-auction-item *ngFor="let auction of pendingAuctions" [auctionItem]="auction"></app-pending-auction-item>
+<div class="pending-auctions-container">
+    <h2 class="title">All pending auctions:</h2>
+    <!-- show name of the month, split auctions by it -->
+    <app-pending-auction-item *ngFor="let auction of pendingAuctions" [auctionItem]="auction"></app-pending-auction-item>
+</div>

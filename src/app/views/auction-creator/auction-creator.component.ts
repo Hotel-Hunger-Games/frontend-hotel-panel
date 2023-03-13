@@ -30,7 +30,7 @@ export class AuctionCreatorComponent implements OnInit {
       auctionEndDate: new FormControl(''),
       startPrice: new FormControl(''),
     })
-  }
+  };
 
   private createDummyRooms() {
     let firstRoom: Room = {
@@ -51,7 +51,7 @@ export class AuctionCreatorComponent implements OnInit {
       images: ''
     }
     
-    let thirdRom: Room = {
+    let thirdRoom: Room = {
       id: 3,
       name: '3',
       accommodationCapacity: 0,
@@ -59,5 +59,9 @@ export class AuctionCreatorComponent implements OnInit {
       stays: '',
       images: ''
     }
+
+    this.availableRoomsList.push(firstRoom);
+    this.availableRoomsList.push(secondRoom);
+    this.availableRoomsList.push(thirdRoom);
   }
 }

@@ -16,6 +16,9 @@ import { BidItemComponent } from './views/bids-view/bid-item/bid-item.component'
 import { AngularMaterialModule } from 'src/angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { MatRippleModule } from '@angular/material/core';
     AngularMaterialModule,
     HttpClientModule,
     MatRippleModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
