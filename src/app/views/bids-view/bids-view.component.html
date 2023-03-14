@@ -1,2 +1,5 @@
-<p>auctionId, find bids list via this</p>
-<p>{{data.auctionId}}</p>
+<div >
+    <h2>List of bids for auction id {{auctionId}} :</h2>
+    <app-bid-item *ngFor="let bid of bidsList" [bidItem]="bid"></app-bid-item>
+</div>
+
