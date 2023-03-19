@@ -1,8 +1,21 @@
 <div class="dashboard-container">
-    <div class="dashboard-element" [routerLink]="['/creator']">
-        <p class="center">Create auction</p>
-    </div>
-    <div class="dashboard-element" [routerLink]="['/auctions/pending']">
-        <p class="center">Show pending auctions</p>
-    </div>
+    <h1>Available options</h1>
+    <div class="dashboard-buttons">
+        <div class="dashboard-element border shadow" [routerLink]="['/creator']">
+            <img src="./baggage-svgrepo-com.svg">
+            <p class="center">CREATE AUCTION</p>
+        </div>
+        <div class="dashboard-element border shadow" [routerLink]="['/auctions/pending']">
+            <p class="center">SHOW PENDING AUCTIONS</p>
+        </div>
+        <div class="dashboard-element border shadow" [routerLink]="['/room/create']">
+            <p class="center">ADD NEW ROOM</p>
+        </div>
+        <div class="dashboard-element border shadow" [routerLink]="['/room/all']">
+            <p class="center">SHOW ALL ROOMS</p>
+        </div>
+        <div class="dashboard-element border shadow" [routerLink]="['/calendar']">
+            <p class="center">SHOW CALENDAR</p>
+        </div>
+    </div>  
 </div>

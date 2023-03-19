@@ -18,6 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { HomePageComponent } from './views/home-page/home-page.component';
+import { AboutComponent } from './views/about/about.component';
+import { RoomsViewComponent } from './views/rooms-view/rooms-view.component';
+import { RoomItemComponent } from './views/rooms-view/room-item/room-item.component';
+import { WeeklyCalendarViewComponent } from './views/weekly-calendar-view/weekly-calendar-view.component';
+import { RoomCreatorComponent } from './views/rooms-view/room-creator/room-creator.component';
 
 
 @NgModule({
@@ -32,7 +38,13 @@ import { MatSelectModule } from '@angular/material/select';
     AuctionCreatorComponent,
     PendingAuctionsEndingSoonComponent,
     BidsViewComponent,
-    BidItemComponent
+    BidItemComponent,
+    HomePageComponent,
+    AboutComponent,
+    RoomCreatorComponent,
+    RoomsViewComponent,
+    RoomItemComponent,
+    WeeklyCalendarViewComponent
   ],
   imports: [
     BrowserModule,
