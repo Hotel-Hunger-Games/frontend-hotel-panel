@@ -1,27 +1,32 @@
 <div class="center-container">
     <div class="creator-container border shadow">
-        <form [formGroup]="auctionCreatorForm" class="form-group">
-            <mat-form-field>
-                <mat-label>Select room number</mat-label>
-                <input>
+        <form [formGroup]="form" class="form-group">
+            <mat-form-field appearance="fill">
+                <mat-label>Select room number:</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let room of availableRoomsList" [value]="room.name">Room {{room.name}}</mat-option>
+                </mat-select>
               </mat-form-field>
-            <div>
-                <label for="room">Room: </label>
-                <input id="room" type="text" formControlName="availableRoomsList">
-            </div>
-            <div>
-                <label for="auction-start-date">Auction start date: </label>
-                <input id="auction-start-date" type="text" formControlName="auctionStartDate">
-            </div>
-            <div>
-                <label for="auction-end-date">Auction end date: </label>
-                <input id="auction-end-date" type="text" formControlName="auctionEndDate">
-            </div>
-            <div>
-                <label for="start-price">Auction minimum price: </label>
-                <input id="start-price" type="text" formControlName="start-price">
-            </div>
+
+            <mat-form-field>
+                <mat-label>Auction start date:</mat-label>
+                <input matInput [formControl]="form.controls['auctionStartDate']" [matDatepicker]="pickerStart">
+                <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+                <mat-datepicker #pickerStart></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Auction end date:</mat-label>
+                <input matInput [formControl]="form.controls['auctionEndDate']" [matDatepicker]="pickerEnd">
+                <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+                <mat-datepicker #pickerEnd></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Auction minimum price:</mat-label>
+                <input matInput>
+            </mat-form-field>
         </form>
-        <button (click)="submitAuctionCreatorForm()">Submit</button>
+        <button (click)="submitAuctionCreatorForm()" mat-button>Submit</button>
     </div>    
 </div>

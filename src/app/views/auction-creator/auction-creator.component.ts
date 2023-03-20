@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Auction } from 'src/app/models/auction-item-model';
 import { Room } from 'src/app/models/room-item-model';
+
+export interface AuctionCreatorFormData {
+  roomNumber: FormControl<string | null>;
+  auctionStartDate: FormControl<string | null>;
+  auctionEndDate: FormControl<string | null>;
+  startPrice: FormControl<number | null>;
+}
 
 @Component({
   selector: 'app-auction-creator',
@@ -8,27 +16,49 @@ import { Room } from 'src/app/models/room-item-model';
   styleUrls: ['./auction-creator.component.scss']
 })
 export class AuctionCreatorComponent implements OnInit {
-  auctionCreatorForm: FormGroup;
+  form!: FormGroup<AuctionCreatorFormData>;
   availableRoomsList: Room[] = [];
+  todayDate!: string;
 
   constructor() {
-    this.auctionCreatorForm = this.createAuctionCreatorForm();
+    
    }
 
   ngOnInit(): void {
     this.createDummyRooms();
+    this.todayDate = this.setTodayDate();
+    this.form = this.createAuctionCreatorForm();
+  }
+
+  private setTodayDate(): string {
+    let todayDate = new Date();
+    const formattedToday = todayDate.getFullYear() + '-0' + todayDate.getMonth() + '-' + todayDate.getDate();
+    return formattedToday;
   }
 
   public submitAuctionCreatorForm(): void {
-    
+    console.log(this.form);
+  }
+
+  private createNewAuction(): Auction {
+    return {
+      id: 0,
+      stayEntity: '',
+      startPrice: 0,
+      actualPrice: 0,
+      auctionEndDate: '',
+      bidHistory: []
+    };
   }
 
   private createAuctionCreatorForm(): FormGroup {
-    return new FormGroup({
-      availableRoomsList: new FormControl(''),
-      auctionStartDate: new FormControl(''),
+    return new FormGroup<AuctionCreatorFormData>({
+      roomNumber: new FormControl('', {
+        nonNullable: true,
+      }),
+      auctionStartDate: new FormControl(this.todayDate),
       auctionEndDate: new FormControl(''),
-      startPrice: new FormControl(''),
+      startPrice: new FormControl(0),
     })
   };
 
