@@ -19,39 +19,39 @@ export class RoomsViewComponent implements OnInit {
     let roomsList: Room[] = [];
 
     let room1: Room = {
-      id: 0,
+      // id: 0,
       name: '',
       accommodationCapacity: 0,
-      bedsSizes: 0,
-      stays: '',
-      images: ''
+      bedsSizes: [],
+      stays: [],
+      images: []
     }
 
     let room2: Room = {
-      id: 1,
+      // id: 1,
       name: '',
       accommodationCapacity: 0,
-      bedsSizes: 0,
-      stays: '',
-      images: ''
+      bedsSizes: [],
+      stays: [],
+      images: []
     }
 
     let room3: Room = {
-      id: 2,
+      // id: 2,
       name: '',
       accommodationCapacity: 0,
-      bedsSizes: 0,
-      stays: '',
-      images: ''
+      bedsSizes: [],
+      stays: [],
+      images: []
     }
 
     let room4: Room = {
-      id: 3,
+      // id: 3,
       name: '',
       accommodationCapacity: 0,
-      bedsSizes: 0,
-      stays: '',
-      images: ''
+      bedsSizes: [],
+      stays: [],
+      images: []
     }
 
   roomsList.push(room1);

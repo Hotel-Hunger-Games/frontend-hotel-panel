@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Auction } from 'src/app/models/auction-item-model';
+import { Auction } from 'src/app/models/auction-item';
+import { AuctionPayLoad } from 'src/app/models/auction-payload';
+import { Bid } from 'src/app/models/bid-item-model';
 import { Room } from 'src/app/models/room-item-model';
+import { Stay } from 'src/app/models/stay-item-model';
+import { AuctionCreatorService } from './auction-creator.service';
 
 export interface AuctionCreatorFormData {
   roomNumber: FormControl<string | null>;
@@ -20,7 +24,9 @@ export class AuctionCreatorComponent implements OnInit {
   availableRoomsList: Room[] = [];
   todayDate!: string;
 
-  constructor() {
+  constructor(
+    private readonly auctionCreatorService: AuctionCreatorService,
+  ) {
     
    }
 
@@ -37,16 +43,36 @@ export class AuctionCreatorComponent implements OnInit {
   }
 
   public submitAuctionCreatorForm(): void {
-    console.log(this.form);
+    const auctionToSubmit: AuctionPayLoad = this.createNewAuction();
+
+    this.auctionCreatorService.postAuction(auctionToSubmit).subscribe((apiResponse) => {
+      console.log(apiResponse);
+    })
   }
 
-  private createNewAuction(): Auction {
+  private createNewAuction(): AuctionPayLoad {
+    const roomOne: Room = {
+      name: 'Room 399',
+      accommodationCapacity: 2,
+      bedsSizes: [],
+      stays: [],
+      images: []
+    }
+    
+    const stay: Stay = {
+      userId: 7,
+      auctionId: 3,
+      reservationStartDate: '',
+      reservationEndDate: '',
+      roomDto: roomOne
+    }
+
     return {
-      id: 0,
-      stayEntity: '',
-      startPrice: 0,
+      stayDto: stay,
+      startPrice: 100,
       actualPrice: 0,
-      auctionEndDate: '',
+      startDate: 1679428360,
+      endDate: 1680119560,
       bidHistory: []
     };
   }
@@ -64,30 +90,30 @@ export class AuctionCreatorComponent implements OnInit {
 
   private createDummyRooms() {
     let firstRoom: Room = {
-      id: 1,
+      // id: 1,
       name: '1',
       accommodationCapacity: 0,
-      bedsSizes: 0,
-      stays: '',
-      images: ''
+      bedsSizes: [],
+      stays: [],
+      images: []
     }
 
     let secondRoom: Room = {
-      id: 2,
+      // id: 2,
       name: '2',
       accommodationCapacity: 0,
-      bedsSizes: 0,
-      stays: '',
-      images: ''
+      bedsSizes: [],
+      stays: [],
+      images: []
     }
     
     let thirdRoom: Room = {
-      id: 3,
+      // id: 3,
       name: '3',
       accommodationCapacity: 0,
-      bedsSizes: 0,
-      stays: '',
-      images: ''
+      bedsSizes: [],
+      stays: [],
+      images: []
     }
 
     this.availableRoomsList.push(firstRoom);

@@ -1,5 +1,33 @@
 .room-box {
     border: solid 1px;
     padding: 5px;
+    height: 35px;
+    width: 35px;
     margin: 3px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.room-boxes-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    padding-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button:hover {
+    cursor: pointer;
 }

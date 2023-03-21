@@ -44,7 +44,7 @@ export class BidsViewService {
     let bidsList: Bid[] = [];
 
     const bidFour: Bid = {
-      id: 4,
+      // id: 4,
       email: 'someuserTwo@gmail.com',
       price: 700,
       bidTime: '',
@@ -52,7 +52,7 @@ export class BidsViewService {
     }
 
     const bidOne: Bid = {
-      id: 1,
+      // id: 1,
       email: 'someuserOne@gmail.com',
       price: 400,
       bidTime: '',
@@ -60,7 +60,7 @@ export class BidsViewService {
     }
 
     const bidTwo: Bid = {
-      id: 2,
+      // id: 2,
       email: 'someuserTwo@gmail.com',
       price: 200,
       bidTime: '',
@@ -68,7 +68,7 @@ export class BidsViewService {
     }
 
     const bidThree: Bid = {
-      id: 3,
+      // id: 3,
       email: 'someuserThree@gmail.com',
       price: 300,
       bidTime: '',
