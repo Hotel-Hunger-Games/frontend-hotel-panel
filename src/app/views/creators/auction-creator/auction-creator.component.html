@@ -1,0 +1,24 @@
+<!-- create auction -->
+<div class="center-container">
+    <h1>Auction details:</h1>
+    <div class="creator-container border shadow">
+        <form [formGroup]="form" class="form-group">
+            <mat-form-field>
+                <mat-label>Auction start date:</mat-label>
+                <input matInput [formControl]="form.controls['auctionStartDate']" type="datetime-local">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Auction end date:</mat-label>
+                <input matInput [formControl]="form.controls['auctionEndDate']" type="datetime-local">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Auction minimum price:</mat-label>
+                <input matInput [formControl]="form.controls['startPrice']">
+            </mat-form-field>
+        </form>
+        <button mat-button>Return</button>
+        <button (click)="submitAuctionCreatorForm()" mat-button>Submit</button>
+    </div>    
+</div>
