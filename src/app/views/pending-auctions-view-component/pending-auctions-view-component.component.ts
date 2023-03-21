@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Auction } from 'src/app/models/auction-item-model';
+import { Auction } from 'src/app/models/auction-item';
 import { PendingAuctionsService } from './pending-auctions.service';
 
 @Component({
@@ -10,31 +10,20 @@ import { PendingAuctionsService } from './pending-auctions.service';
 export class PendingAuctionsViewComponentComponent implements OnInit {
   public pendingAuctions: Auction[] = [];
 
-  constructor(private readonly pendingAuctionsService: PendingAuctionsService) { 
-    let auction: Auction = {
-      id: 32,
-      stayEntity: '',
-      startPrice: 200,
-      actualPrice: 400,
-      auctionEndDate: '',
-      bidHistory: []
-    }
-
-    let auction2: Auction = {
-      id: 64,
-      stayEntity: '',
-      startPrice: 300,
-      actualPrice: 500,
-      auctionEndDate: '',
-      bidHistory: []
-    }
-    
-    this.pendingAuctions.push(auction);
-    this.pendingAuctions.push(auction2);
+  constructor(
+    private readonly pendingAuctionsService: PendingAuctionsService,
+    ) { 
   }
 
   ngOnInit(): void {
-    // this.pendingAuctionsService.getAuctions();
+    this.getAllAuctions();
+  }
+
+  private getAllAuctions() {
+    this.pendingAuctionsService.getAllAuctions().subscribe((auctions) => {
+      this.pendingAuctions = auctions;
+      console.log(auctions);
+    })
   }
 
 }

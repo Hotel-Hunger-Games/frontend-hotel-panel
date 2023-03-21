@@ -1,0 +1,11 @@
+.pending-auctions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title {
+    border-bottom: solid 0.5px;
+}

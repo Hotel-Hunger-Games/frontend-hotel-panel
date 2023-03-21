@@ -1,22 +1,28 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Auction } from 'src/app/models/auction-item-model';
+import { Auction } from 'src/app/models/auction-item';
 import { BidsViewComponent } from '../../bids-view/bids-view.component';
 
 export interface DialogData {
-  auctionId: number;
+  auction: Auction;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class PendingAuctionItemService {
-  constructor(public dialog: MatDialog) { }
+  apiUrl = 'http://localhost:8080/'
 
-  public openDialog(auctionIdReceived: number) {
+  constructor(
+    public dialog: MatDialog,
+  ) { 
+
+  }
+
+  public openDialog(auction: Auction) {
     this.dialog.open(BidsViewComponent, {
       data: {
-        auctionId: auctionIdReceived,
+        auction: auction,
       },
     });
   }

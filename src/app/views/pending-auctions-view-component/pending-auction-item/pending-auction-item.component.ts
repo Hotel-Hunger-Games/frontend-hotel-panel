@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Auction } from 'src/app/models/auction-item-model';
+import { Auction } from 'src/app/models/auction-item';
 import { PendingAuctionItemService } from './pending-auction-item.service';
 
 @Component({
@@ -9,17 +9,15 @@ import { PendingAuctionItemService } from './pending-auction-item.service';
 })
 export class PendingAuctionItemComponent implements OnInit {
   @Input() auctionItem!: Auction;
-  auctionItemId!: number;
   showAuctionDetailsComponent: boolean = false;
 
   constructor(private pendingAuctionItemService: PendingAuctionItemService
     ) { }
 
   ngOnInit(): void {
-    this.auctionItemId = this.auctionItem.id;
   }
 
   public openDialog() {
-    this.pendingAuctionItemService.openDialog(this.auctionItemId);
+    this.pendingAuctionItemService.openDialog(this.auctionItem);
   }
 }

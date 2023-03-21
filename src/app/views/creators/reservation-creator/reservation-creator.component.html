@@ -1,0 +1,24 @@
+<div class="center-container">
+    <h1>Reservation details:</h1>
+    <div class="creator-container border shadow">
+        <form [formGroup]="stayForm" class="form-group">
+            <mat-form-field appearance="fill">
+                <mat-label>Select room number:</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let room of availableRoomsList" [value]="room.name">Room {{room.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Reservation start date:</mat-label>
+                <input matInput [formControl]="stayForm.controls['auctionStartDate']" type="datetime-local">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Reservation end date:</mat-label>
+                <input matInput [formControl]="stayForm.controls['auctionEndDate']" type="datetime-local">
+            </mat-form-field>
+        </form>
+        <button mat-button (click)="navigateToAuctionCreator()">Continue</button>
+    </div>    
+</div>

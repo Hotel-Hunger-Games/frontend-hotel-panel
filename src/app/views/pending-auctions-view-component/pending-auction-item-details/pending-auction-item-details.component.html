@@ -1,7 +1,10 @@
 <hr>
-<div class="auction-details">
+<div *ngIf="!topBidder">
+    <p>No bids yet!</p>
+</div>
+<div class="auction-details" *ngIf="topBidder">
     <p>Auction time remaining:</p>
     <p>1d 23h 36mins</p>
-    <p>Top bid amount:</p>
-    <p>365 eur</p>
+    <p>Top bidder amount:</p>
+    <p>{{topBidder.price}}</p>
 </div>
