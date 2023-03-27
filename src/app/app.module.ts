@@ -21,13 +21,14 @@ import { AboutComponent } from './views/about/about.component';
 import { RoomsViewComponent } from './views/rooms-view/rooms-view.component';
 import { RoomItemComponent } from './views/rooms-view/room-item/room-item.component';
 import { WeeklyCalendarViewComponent } from './views/weekly-calendar-view/weekly-calendar-view.component';
-import { RoomCreatorComponent } from './views/rooms-view/room-creator/room-creator.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReservationCreatorComponent } from './views/creators/reservation-creator/reservation-creator.component';
+import { RoomCreatorComponent } from './views/creators/room-creator/room-creator.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -46,11 +47,11 @@ import { ReservationCreatorComponent } from './views/creators/reservation-creato
     BidItemComponent,
     HomePageComponent,
     AboutComponent,
-    RoomCreatorComponent,
     RoomsViewComponent,
     RoomItemComponent,
     WeeklyCalendarViewComponent,
-    ReservationCreatorComponent
+    ReservationCreatorComponent,
+    RoomCreatorComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +65,8 @@ import { ReservationCreatorComponent } from './views/creators/reservation-creato
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule 
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [
   ],

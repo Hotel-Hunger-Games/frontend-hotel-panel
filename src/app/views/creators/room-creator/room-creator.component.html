@@ -1,0 +1,16 @@
+<div class="center-container">
+    <h1>Room creator:</h1>
+    <div class="creator-container border shadow">
+        <form [formGroup]="newRoomForm" class="form-group">
+            <mat-form-field>
+                <mat-label>Room number:</mat-label>
+                <input matInput type="number" min="1" step="1" [formControl]="newRoomForm.controls['roomNumber']">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Capacity:</mat-label>
+                <input matInput type="number" min="1" max="10" step="1" [formControl]="newRoomForm.controls['acommodationCapacity']">
+            </mat-form-field>
+        </form>
+        <button class="center-container" mat-button (click)="createNewRoom()">Create room</button>
+    </div>     
+</div> 

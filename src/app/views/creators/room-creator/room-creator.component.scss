@@ -1,0 +1,19 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.creator-container {
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
