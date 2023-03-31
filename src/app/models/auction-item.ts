@@ -6,7 +6,7 @@ export interface Auction {
     readonly stayDto: Stay;
     readonly startPrice: number;
     readonly actualPrice: number;
-    readonly startDate: Date;
-    readonly endDate: Date; 
+    readonly startDate: String;
+    readonly endDate: String; 
     readonly bidHistory: Bid[];
 }

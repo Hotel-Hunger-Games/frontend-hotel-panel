@@ -1,10 +1,15 @@
 <hr>
-<div *ngIf="!topBidder">
-    <p>No bids yet!</p>
-</div>
-<div class="auction-details" *ngIf="topBidder">
+<div class="auction-details">
+    <p>Auction ID: <strong>{{auction.id}}</strong></p>
+    <p>Auction start price: <strong>{{auction.startPrice}} EUR</strong></p>
     <p>Auction time remaining:</p>
-    <p>1d 23h 36mins</p>
-    <p>Top bidder amount:</p>
+    <p><strong>{{timeUntilAuctionEnd}}</strong></p>
+</div>
+<div class="auction-details">
+    <p>Auction started at: <strong>{{startDateTime}}</strong></p>
+    <p>Auction ending at: <strong>{{endDateTime}}</strong></p>
+</div>
+<div *ngIf="topBidder">
+    <p>Current top bidder amount:</p>
     <p>{{topBidder.price}}</p>
 </div>

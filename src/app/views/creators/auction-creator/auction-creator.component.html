@@ -1,4 +1,3 @@
-<!-- create auction -->
 <div class="center-container">
     <h1>Auction details:</h1>
     <div class="creator-container border shadow">
@@ -16,6 +15,23 @@
             <mat-form-field>
                 <mat-label>Auction minimum price:</mat-label>
                 <input matInput [formControl]="form.controls['startPrice']">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Select room number:</mat-label>
+                <mat-select [formControl]="form.controls['roomNumber']">
+                  <mat-option *ngFor="let room of availableRoomsList" [value]="room.name">Room {{room.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Reservation start date:</mat-label>
+                <input matInput [formControl]="form.controls['reservationStartDate']" type="date">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Reservation end date:</mat-label>
+                <input matInput [formControl]="form.controls['reservationEndDate']" type="date">
             </mat-form-field>
         </form>
         <button mat-button>Return</button>
