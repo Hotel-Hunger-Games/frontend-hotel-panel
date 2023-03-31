@@ -15,7 +15,7 @@ export class AuctionsGatewayService {
   ) { }
 
 
-  public getAllAuctions(): Observable<Auction[]> {
-    return this.http.get<Auction[]>(this.apiUrl + "api/auction");
+  public getAllAuctions(): Observable<AuctionApiResponse[]> {
+    return this.http.get<AuctionApiResponse[]>(this.apiUrl + "api/auction");
   }
 }

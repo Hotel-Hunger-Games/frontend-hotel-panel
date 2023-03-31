@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Auction } from 'src/app/models/auction-item';
+import { FormControl, FormGroup } from '@angular/forms';
 import { AuctionPayLoad } from 'src/app/models/auction-payload';
-import { Bid } from 'src/app/models/bid-item-model';
 import { Room } from 'src/app/models/room-item-model';
-import { Stay } from 'src/app/models/stay-item-model';
+import { StayPayLoad } from 'src/app/models/stay-payload';
 import { AuctionCreatorService } from './auction-creator.service';
 
 export interface AuctionCreatorFormData {
   auctionStartDate: FormControl<Date | null>;
   auctionEndDate: FormControl<Date | null>;
   startPrice: FormControl<number | null>;
+  roomNumber: FormControl<string | null>;
+  reservationStartDate: FormControl<Date | null>;
+  reservationEndDate: FormControl<Date | null>;
 }
 
 @Component({
@@ -21,6 +22,7 @@ export interface AuctionCreatorFormData {
 export class AuctionCreatorComponent implements OnInit {
   form!: FormGroup<AuctionCreatorFormData>;
   todayDate!: string;
+  availableRoomsList: Room[] = [];
 
   constructor(
     private readonly auctionCreatorService: AuctionCreatorService,
@@ -31,6 +33,7 @@ export class AuctionCreatorComponent implements OnInit {
   ngOnInit(): void {
     this.todayDate = this.setTodayDate();
     this.form = this.createAuctionCreatorForm();
+    this.availableRoomsList = this.auctionCreatorService.createDummyRooms();
   }
 
   private setTodayDate(): string {
@@ -40,39 +43,30 @@ export class AuctionCreatorComponent implements OnInit {
   }
 
   public submitAuctionCreatorForm(): void {
-    console.log(this.form.controls['auctionStartDate'].value);
-    console.log(this.form);
+    const auctionToSubmit: AuctionPayLoad = this.createNewAuction();
 
-    // const auctionToSubmit: AuctionPayLoad = this.createNewAuction();
+    this.auctionCreatorService.postAuction(auctionToSubmit).subscribe((apiResponse) => {
+      console.log(apiResponse);
+    })
+  }
 
-    // this.auctionCreatorService.postAuction(auctionToSubmit).subscribe((apiResponse) => {
-    //   console.log(apiResponse);
-    // })
+  private createStay(): StayPayLoad {
+    return {
+      userId: 1,
+      auctionId: 1,
+      reservationStartDate: new Date(this.form.controls['reservationStartDate'].value!).getTime() / 1000,
+      reservationEndDate: new Date(this.form.controls['reservationEndDate'].value!).getTime() / 1000,
+      roomDto: this.getRoomFromList()
+    }
   }
 
   private createNewAuction(): AuctionPayLoad {
-    const roomOne: Room = {
-      name: 'Room 399',
-      accommodationCapacity: 2,
-      bedsSizes: [],
-      stays: [],
-      images: []
-    }
-    
-    const stay: Stay = {
-      userId: 7,
-      auctionId: 3,
-      reservationStartDate: '',
-      reservationEndDate: '',
-      roomDto: roomOne
-    }
-
     return {
-      stayDto: stay,
-      startPrice: 100,
+      stayDto: this.createStay(),
+      startPrice: this.form.controls['startPrice'].value!,
       actualPrice: 0,
-      startDate: 1679428360,
-      endDate: 1680119560,
+      startDate: new Date(this.form.controls['auctionStartDate'].value!).getTime() / 1000,
+      endDate: new Date(this.form.controls['auctionEndDate'].value!).getTime() / 1000,
       bidHistory: []
     };
   }
@@ -82,6 +76,19 @@ export class AuctionCreatorComponent implements OnInit {
       auctionStartDate: new FormControl(),
       auctionEndDate: new FormControl(),
       startPrice: new FormControl(),
+      roomNumber: new FormControl('', {
+        nonNullable: true,
+      }),
+      reservationStartDate: new FormControl(),
+      reservationEndDate: new FormControl(),
     })
   };
+
+  private getRoomFromList(): Room {
+    let roomName: String = this.form.controls['roomNumber'].value!;
+    let room = this.availableRoomsList.find(element => 
+      element.name == roomName
+    );
+    return room!;
+  }
 }

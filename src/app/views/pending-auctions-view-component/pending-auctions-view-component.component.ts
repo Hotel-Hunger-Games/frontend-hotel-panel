@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Auction } from 'src/app/models/auction-item';
+import { AuctionApiResponse } from 'src/app/models/auction-api-response';
 import { PendingAuctionsService } from './pending-auctions.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { PendingAuctionsService } from './pending-auctions.service';
   styleUrls: ['./pending-auctions-view-component.component.scss']
 })
 export class PendingAuctionsViewComponentComponent implements OnInit {
-  public pendingAuctions: Auction[] = [];
+  public pendingAuctions: AuctionApiResponse[] = [];
 
   constructor(
     private readonly pendingAuctionsService: PendingAuctionsService,
@@ -25,5 +25,4 @@ export class PendingAuctionsViewComponentComponent implements OnInit {
       console.log(auctions);
     })
   }
-
 }

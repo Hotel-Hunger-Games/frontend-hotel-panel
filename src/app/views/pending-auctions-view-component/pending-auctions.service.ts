@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuctionsGatewayService } from 'src/app/gateways/auctions-gateway.service';
-import { Auction } from 'src/app/models/auction-item';
+import { AuctionApiResponse } from 'src/app/models/auction-api-response';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class PendingAuctionsService {
     
   ) { }
 
-  public getAllAuctions(): Observable<Auction[]>  {
+  public getAllAuctions(): Observable<AuctionApiResponse[]>  {
     return this.auctionsGatewayService.getAllAuctions();
   }
 }
