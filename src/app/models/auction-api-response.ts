@@ -1,4 +1,3 @@
-import { Bid } from "./bid-item-model";
 import { StayApiResponse } from "./stay-api-response";
 
 export interface AuctionApiResponse {
@@ -8,5 +7,4 @@ export interface AuctionApiResponse {
     readonly actualPrice: number;
     readonly startDate: string;
     readonly endDate: string; 
-    readonly bidHistory: Bid[];
 }

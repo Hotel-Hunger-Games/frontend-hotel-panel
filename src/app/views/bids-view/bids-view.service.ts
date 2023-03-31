@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { BidGatewayService } from 'src/app/gateways/bid-gateway.service';
 import { Bid } from 'src/app/models/bid-item-model';
 @Injectable({
   providedIn: 'root'
 })
 export class BidsViewService {
 
-  constructor() { }
+  constructor(
+    private readonly bidGateway: BidGatewayService,
+  ) { }
 
-  public getBidsList(): Observable<Bid[]> {
-    return of(this.createBidsList());
+  public getBidsList(id: number): Observable<Bid[]> {
+    return this.bidGateway.getBidsListByAuctionId(id);
   }
 
   public filterBidsList(auctionId: number, bidsList: Bid[]): Bid[] {
@@ -38,48 +41,5 @@ export class BidsViewService {
 
 
     return sortedArray;
-  }
-
-  private createBidsList(): Bid[] {
-    let bidsList: Bid[] = [];
-
-    const bidFour: Bid = {
-      // id: 4,
-      email: 'someuserTwo@gmail.com',
-      price: 700,
-      bidTime: '',
-      auctionId: 64,
-    }
-
-    const bidOne: Bid = {
-      // id: 1,
-      email: 'someuserOne@gmail.com',
-      price: 400,
-      bidTime: '',
-      auctionId: 32,
-    }
-
-    const bidTwo: Bid = {
-      // id: 2,
-      email: 'someuserTwo@gmail.com',
-      price: 200,
-      bidTime: '',
-      auctionId: 64,
-    }
-
-    const bidThree: Bid = {
-      // id: 3,
-      email: 'someuserThree@gmail.com',
-      price: 300,
-      bidTime: '',
-      auctionId: 32,
-    }
-
-    bidsList.push(bidFour);
-    bidsList.push(bidOne);
-    bidsList.push(bidTwo);
-    bidsList.push(bidThree);
-
-    return bidsList;
   }
 }

@@ -9,7 +9,8 @@
     <p>Auction started at: <strong>{{startDateTime}}</strong></p>
     <p>Auction ending at: <strong>{{endDateTime}}</strong></p>
 </div>
-<div *ngIf="topBidder">
-    <p>Current top bidder amount:</p>
-    <p>{{topBidder.price}}</p>
+<hr>
+<div *ngIf="topBidder" style="text-align: center;">
+    <p>Current top bidder amount: <strong>{{topBidder.price}}EUR</strong>  </p>
+    <p></p>
 </div>
