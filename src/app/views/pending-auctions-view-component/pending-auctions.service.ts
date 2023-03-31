@@ -11,7 +11,6 @@ export class PendingAuctionsService {
 
   constructor(
     private auctionsGatewayService: AuctionsGatewayService,
-    
   ) { }
 
   public getAllAuctions(): Observable<AuctionApiResponse[]>  {

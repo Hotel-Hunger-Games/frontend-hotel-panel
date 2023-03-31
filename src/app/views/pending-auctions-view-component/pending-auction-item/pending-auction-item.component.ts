@@ -35,8 +35,7 @@ export class PendingAuctionItemComponent implements OnInit {
       startPrice: this.auctionApiResponse.startPrice,
       actualPrice: this.auctionApiResponse.actualPrice,
       startDate: this.convertFromEpochToDate(this.auctionApiResponse.startDate),
-      endDate: this.convertFromEpochToDate(this.auctionApiResponse.endDate),
-      bidHistory: []
+      endDate: this.convertFromEpochToDate(this.auctionApiResponse.endDate)
     }
   }
 

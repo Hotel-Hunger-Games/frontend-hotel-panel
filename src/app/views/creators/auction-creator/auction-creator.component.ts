@@ -67,7 +67,6 @@ export class AuctionCreatorComponent implements OnInit {
       actualPrice: 0,
       startDate: new Date(this.form.controls['auctionStartDate'].value!).getTime() / 1000,
       endDate: new Date(this.form.controls['auctionEndDate'].value!).getTime() / 1000,
-      bidHistory: []
     };
   }
 

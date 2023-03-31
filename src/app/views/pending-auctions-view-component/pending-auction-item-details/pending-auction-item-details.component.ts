@@ -28,7 +28,15 @@ export class PendingAuctionItemDetailsComponent implements OnInit {
   }
 
   private getTopBidder() {
-    this.topBidder = this.bidsViewService.sortListByHighestBid(this.auction.bidHistory)[0];
+    this.topBidder = this.bidsViewService.sortListByHighestBid(this.getBidsList())[0];
+  }
+
+  private getBidsList(): Bid[] {
+    let recList!: Bid[];
+    this.bidsViewService.getBidsList(this.auction.id).subscribe((list) => {
+      recList = list;
+    }) 
+    return recList;
   }
 
   private setTimeUntilAcutionEnds(): String {

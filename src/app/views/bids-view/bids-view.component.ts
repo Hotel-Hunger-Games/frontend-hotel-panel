@@ -23,13 +23,13 @@ export class BidsViewComponent implements OnInit {
   ngOnInit(): void {
     this.auction = this.data.auction;
     this.bidsList = this.setBidsList();
-    // this.subscribeToGetBidsList(this.auction);
   }
 
   private setBidsList(): Bid[] {
-    let bidsHistory = this.auction.bidHistory;
-    console.log(this.auction);
-    console.log(bidsHistory);
+    let bidsHistory!: Bid[];
+    this.bidsViewService.getBidsList(this.auction.id).subscribe((rec) => {
+      bidsHistory = rec;
+    })
     if(bidsHistory == null) {
       return bidsHistory;
     }
@@ -38,7 +38,7 @@ export class BidsViewComponent implements OnInit {
   }
 
   private subscribeToGetBidsList(auctionId: number): void {
-    this.bidsViewService.getBidsList().subscribe((data) => {
+    this.bidsViewService.getBidsList(auctionId).subscribe((data) => {
       this.bidsList = this.bidsViewService.sortListByHighestBid(this.bidsViewService.filterBidsList(auctionId, data));
     })
   };
