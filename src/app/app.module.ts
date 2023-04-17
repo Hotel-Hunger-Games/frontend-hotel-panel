@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
+import { RoomCreatorComponent } from './views/room-creator/room-creator.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     AuctionCreatorComponent,
     BidsViewComponent,
     BidItemComponent,
+    RoomCreatorComponent,
   ],
   imports: [
     BrowserModule,

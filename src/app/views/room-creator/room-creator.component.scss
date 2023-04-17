@@ -1,0 +1,91 @@
+.light-border {
+    box-shadow: 1px 1px 5px 4px rgba(150, 145, 145, 0.418);
+    width: 500px;
+    margin: auto;
+    padding: 35px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+input, button:last-child, button:first-child  {
+    transition: all .25s ease-in-out;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 45px 0px 0px 20px;
+}
+
+input {
+    margin: 0px 65px 50px 10px;
+    border: none;
+    box-shadow: 1px 1px 5px 4px rgba(138, 132, 132, 0.418);
+    transition: box-shadow 0.45s;
+    height: 25px;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 1px 1px 5px 4px rgba(145, 163, 214, 0.788);
+    transform: scale(1.01);
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: smaller;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button:first-child {
+    border: none;
+    box-shadow: 1px 1px 5px 4px rgba(149, 151, 158, 0.856);
+    width: 160px;
+    height: 30px;
+}
+
+button:last-child  {
+    border: none;
+    box-shadow: 1px 1px 5px 4px rgba(133, 158, 131, 0.788);
+    width: 220px;
+    height: 40px;
+    font-size: larger;
+}
+
+button:first-child:hover  {
+    border: solid;
+    border-width: 0.1px;
+    border-color: rgba(202, 196, 196, 0.781);
+    box-shadow: none;
+    background-color:  rgba(202, 149, 149, 0.822);
+    transform: scale(1.05);
+}
+
+button:last-child:hover  {
+    border: solid;
+    border-width: 0.1px;
+    border-color: rgba(202, 196, 196, 0.781);
+    box-shadow: none;
+    background-color:  rgba(133, 158, 131, 0.788);
+    transform: scale(1.1);
+}
