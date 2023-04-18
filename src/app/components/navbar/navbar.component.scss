@@ -1,19 +1,45 @@
-.navbar {   
+.navbar {
     display: flex;
     flex-direction: row;
+    height: 120px;
+    margin: 0px 80px 40px 40px;
+    align-items: center;
     justify-content: space-between;
-    height: 40px;
-    margin-bottom: 30px;
-    border-bottom: solid 0.5px gray;
+}
+
+.account-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vw;
+    align-items: center;
+}
+
+a:hover {
+    transform: scale(1.03);
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: rgba(53, 53, 53, 0.904);
+    font-size: 1.6em;
+    padding-bottom: 8px;
+    border-bottom: solid;
+    border-width: 0.1px;
+    border-color: rgba(187, 180, 180, 0.897);
+    transition: all .1s linear;
 }
 
-.nav-element {
-    align-self: center;
-    padding: 0px 25px 0px 25px;
+.flex-row {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vw;
+}
+
+.sign-up {
+    background-color: rgba(155, 30, 30, 0.925);
+    color:rgb(226, 216, 216);
+    padding: 13px 25px 13px 25px;
+    border-radius: 23px;
 }
