@@ -1,0 +1,43 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    width: 70vw;
+    margin: auto;
+    height: 500px;
+    justify-content: start;
+    align-items: start;
+}
+
+.element1 { 
+    grid-area: 1 / 1 / 2 / 2;   
+}
+
+.element2 {
+    grid-area: 1 / 2 / 2 / 2;   
+}
+
+.element-flex {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+}
+
+.icon {
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.link:hover {
+    box-shadow: 1px 1px 5px 4px rgba(139, 139, 139, 0.699);
+    cursor: pointer;
+}
+
+.link {
+    transition: all .25s ease-in-out;
+}

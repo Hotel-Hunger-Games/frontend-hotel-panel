@@ -22,6 +22,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RoomCreatorComponent } from './views/room-creator/room-creator.component';
+import { HotelManagerPageComponent } from './views/hotel-manager-page/hotel-manager-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RoomCreatorComponent } from './views/room-creator/room-creator.componen
     BidsViewComponent,
     BidItemComponent,
     RoomCreatorComponent,
+    HotelManagerPageComponent,
   ],
   imports: [
     BrowserModule,
