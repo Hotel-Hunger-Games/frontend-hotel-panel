@@ -29,16 +29,38 @@ h1 {
     margin: 0;
 } 
 
-.auctions-ending-soon-container {
-    border: solid;
-    border-color: lightgray;
-    width: 500px;
+.widget {
+    // background-color: rgb(228, 227, 227);
+    // background-color: rgb(231, 231, 231);
+    width: 600px;
     height: 300px;
     margin: 50px;
 }
 
 .card-title {
-    border: solid;
-    border-color: black;
-    text-align: center;
+    // text-align: center;
+    height: 45px;
+    // background-color: rgba(58, 58, 58, 0.911);
+    // background-color: rgba(172, 64, 64, 0.925);
+    background-color: rgb(143, 50, 50);
+    color: white;
+        // border: solid;
+        // border-width: 0.1px;
+        // border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    // flex-direction: row;
+    align-items: center;
+}
+
+svg {
+    fill: white;
+}
+
+.content {
+    margin: 0px 15px 0px 15px;
+}
+
+h3 {
+    margin-left: 15px;
 }

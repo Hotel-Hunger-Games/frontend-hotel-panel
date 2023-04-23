@@ -23,6 +23,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RoomCreatorComponent } from './views/room-creator/room-creator.component';
 import { HotelManagerPageComponent } from './views/hotel-manager-page/hotel-manager-page.component';
+import { MiniAuctionItemComponent } from './minis/mini-auction-item/mini-auction-item.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HotelManagerPageComponent } from './views/hotel-manager-page/hotel-mana
     BidItemComponent,
     RoomCreatorComponent,
     HotelManagerPageComponent,
+    MiniAuctionItemComponent,
   ],
   imports: [
     BrowserModule,
