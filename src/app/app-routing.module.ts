@@ -5,6 +5,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { PendingAuctionsViewComponentComponent } from './views/pending-auctions-view-component/pending-auctions-view-component.component';
 import { RoomCreatorComponent } from './views/room-creator/room-creator.component';
 import { HotelManagerPageComponent } from './views/hotel-manager-page/hotel-manager-page.component';
+import { HotelStatisticsPageComponent } from './views/hotel-statistics-page/hotel-statistics-page.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'auctions/pending', component: PendingAuctionsViewComponentComponent },
   { path: 'room/create', component: RoomCreatorComponent },
   { path: 'hotel/manage', component: HotelManagerPageComponent },
+  { path: 'statistics', component: HotelStatisticsPageComponent },
 ];
 
 @NgModule({

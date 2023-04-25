@@ -1,0 +1,19 @@
+.shortcuts > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.shortcuts > div:hover {
+    cursor: pointer;
+}
+
+.shortcuts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}

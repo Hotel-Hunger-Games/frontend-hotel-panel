@@ -24,6 +24,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { RoomCreatorComponent } from './views/room-creator/room-creator.component';
 import { HotelManagerPageComponent } from './views/hotel-manager-page/hotel-manager-page.component';
 import { MiniAuctionItemComponent } from './minis/mini-auction-item/mini-auction-item.component';
+import { HotelStatisticsPageComponent } from './views/hotel-statistics-page/hotel-statistics-page.component';
+import { ShortcutWidgetComponent } from './views/dashboard/shortcut-widget/shortcut-widget.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { MiniAuctionItemComponent } from './minis/mini-auction-item/mini-auction
     RoomCreatorComponent,
     HotelManagerPageComponent,
     MiniAuctionItemComponent,
+    HotelStatisticsPageComponent,
+    ShortcutWidgetComponent,
   ],
   imports: [
     BrowserModule,
