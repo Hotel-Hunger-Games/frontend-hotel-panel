@@ -1,10 +1,29 @@
 .svg-text-container {
     display: flex;
     flex-direction: row;
+    padding-top: 15px;
+    gap: 10px;
 }
 
 .details {
     display: flex;
     flex-direction: row;
     gap: 10px
+}
+
+.icon-room-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+}
+
+.icon-room-container p {
+    margin: 0;
+    padding: 0;
+}
+
+.room-number {
+    font-size: 1.2rem;
 }
