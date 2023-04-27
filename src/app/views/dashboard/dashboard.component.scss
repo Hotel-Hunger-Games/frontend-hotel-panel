@@ -15,7 +15,14 @@
     font-size: 1.6rem;
 }
 
-img {
+.room-wide {
+    height: 230px;
+    width: 100vw;
+    margin-bottom: 40px;
+    border: solid 1px rgb(145, 144, 144);
+}
+
+.hotel-info-container > img {
     height: 80px;
     border-radius: 10%;
     box-shadow: 1px 1px 5px 4px rgba(139, 139, 139, 0.699);
