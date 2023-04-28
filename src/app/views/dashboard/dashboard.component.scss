@@ -1,4 +1,4 @@
-.main-container > div > div {
+.shadow {
     box-shadow: 1px 1px 5px 2px rgba(139, 139, 139, 0.699);
     margin: 10px 10px 0px 15px;
 }
@@ -22,12 +22,6 @@
     border: solid 1px rgb(145, 144, 144);
 }
 
-.hotel-info-container > img {
-    height: 80px;
-    border-radius: 10%;
-    box-shadow: 1px 1px 5px 4px rgba(139, 139, 139, 0.699);
-}
-
 .main-container {
     width: 1300px;
     margin: 0 auto;
@@ -35,9 +29,17 @@
     flex-direction: row;
 }
 
-.hotel-shortcut-container {
+.column {
     display: flex;
     flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.hotel-shortcut-container {
     width: 600px;
 }
 
@@ -47,26 +49,42 @@
     flex: 1;
 }
 
-// margin: 0 auto; to center
-
-
-// its about widget so gotta get rid of it
-.widget {
-    // background-color: rgb(228, 227, 227);
-    // background-color: rgb(231, 231, 231);
-    // width: 600px;
-    // height: 300px;
-    // margin: 50px;
-}
-
 .card-title {
-    background: linear-gradient(to right, #a73737, #7a2828); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #7a2828;
     height: 55px;
     color: rgb(228, 228, 228);
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 25px;
+}
+
+.right {
+    background: linear-gradient(to left, #a73737, #7a2828);
+}
+
+.left {
+    // background: linear-gradient(to right, #a73737, #7a2828);
+    background-color: #6e5e55;
+}
+
+.over-img {
+    width: 400px;
+    position: absolute;
+    top: 280px;
+    z-index: 1000;
+    color: rgb(226, 226, 226);
+}
+
+.hotel-info-container > img {
+    // margin-left: 20px;
+    height: 90px;
+    border-radius: 10%;
+    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.699);
+}
+
+.black-shadow {
+    border: 1px outset #5c5c5c; 
 }
 
 svg {
@@ -79,4 +97,8 @@ svg {
 
 .title {
     font-size: 1.3rem;
+}
+
+#svg2793 {
+    filter: brightness(0) invert(1);
 }
